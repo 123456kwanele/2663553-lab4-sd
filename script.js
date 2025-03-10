@@ -1,5 +1,5 @@
 document.getElementById('country-form').addEventListener('submit', function(event) {
-    event.preventDefault(); // Prevent form submission and page reload
+    event.preventDefault(); 
     const countryName = document.getElementById('country-name').value.trim();
     if (!countryName) {
         alert('Please enter a country name.');
@@ -28,7 +28,7 @@ async function displayCountryInfo(country) {
     const countryInfoSection = document.getElementById('country-info');
     const borderingCountriesSection = document.getElementById('bordering-countries');
 
-    // Clear any previous content
+    
     countryInfoSection.innerHTML = '';
     borderingCountriesSection.innerHTML = '';
 
@@ -37,7 +37,7 @@ async function displayCountryInfo(country) {
     const region = country.region;
     const flag = country.flags.png;
 
-    // Display country information
+    
     countryInfoSection.innerHTML = `
         <h2>${country.name.common}</h2>
         <p><strong>Capital:</strong> ${capital}</p>
@@ -46,7 +46,7 @@ async function displayCountryInfo(country) {
         <img src="${flag}" alt="Flag of ${country.name.common}" width="150">
     `;
 
-    // Handle bordering countries
+    
     if (country.borders && country.borders.length > 0) {
         let bordersHTML = '<h3>Bordering Countries:</h3>';
         for (const border of country.borders) {
